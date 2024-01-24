@@ -85,7 +85,9 @@ impl Ord for PathMatch {
                     .distance_to_relative_ancestor
                     .cmp(&self.distance_to_relative_ancestor)
             })
-            .then_with(|| self.path.cmp(&other.path))
+            // the first match sould have the largest score and path that
+            // starts with first alphanumerical path string
+            .then_with(|| other.path.cmp(&self.path))
     }
 }
 

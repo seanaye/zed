@@ -559,7 +559,7 @@ impl FileFinderDelegate {
                                 project.find_local_worktree(query_path, cx)
                             {
                                 path_matches.push(PathMatch {
-                                    score: 0.0,
+                                    score: 1.0,
                                     positions: Vec::new(),
                                     worktree_id: worktree.read(cx).id().to_usize(),
                                     path: Arc::from(relative_path),
